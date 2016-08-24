@@ -1,11 +1,18 @@
-package yong.hello02;
+package yong.hello03;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 public class HelloApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		MessageBean bean=new MessageBeanKo();
-		bean.sayHello("Interface");
+		
+		Resource resource = new ClassPathResource("applicationContext.xml");
+		BeanFactory factory = new XmlBeanFactory(resource);
+		MessageBean bean = (MessageBean)factory.getBean("messageBean");
+		bean.sayHello("Spring");
 	}
 
 }

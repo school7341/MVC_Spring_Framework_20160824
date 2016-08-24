@@ -1,4 +1,4 @@
-package yong.hello02;
+package yong.hello03;
 
 public interface MessageBean {
 	public void sayHello(String name);
