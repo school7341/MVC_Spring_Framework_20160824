@@ -1,5 +1,5 @@
-package yong.hello03;
+package yong.hello;
 
 public interface MessageBean {
-	public void sayHello(String name);
+	public void sayHello();
 }

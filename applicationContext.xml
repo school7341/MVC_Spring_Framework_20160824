@@ -2,6 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="messageBean" class="yong.hello03.MessageBeanKo"></bean>
 
+		<bean id="messageBean" class="yong.hello.MessageBeanImple">
+			<constructor-arg>
+				<value>스프링</value>
+			</constructor-arg>
+			<property name="greeting">
+				<value>안녕하세요</value>
+			</property>
+			<property name="outer">
+				<ref bean="dbOuter"/>
+			</property>
+		</bean>
+		
+		<bean id="dbOuter" class="yong.hello.DBOuter">
+		</bean>
+		
+		<bean id="fileouter" class="yong.hello.FileOuter">
+		<property name="filename">
+			<value>out.txt</value>
+		</property>
+		</bean>
 </beans>
