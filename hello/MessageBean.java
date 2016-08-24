@@ -1,7 +1,5 @@
-package yong.hello01;
+package yong.hello02;
 
-public class MessageBean {
-	public void sayHello(String name){
-		System.out.println("Hello, "+name+"!");
-	}
+public interface MessageBean {
+	public void sayHello(String name);
 }
