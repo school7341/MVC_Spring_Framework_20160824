@@ -1,15 +1,16 @@
 package yong.hello;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloApp {
-	public static void main(String[] args){
-		Resource resource = new ClassPathResource("applicationContext.xml");
-		BeanFactory factory = new XmlBeanFactory(resource);
-		MessageBean bean=(MessageBean)factory.getBean("messageBean");
+
+	public static void main(String[] args) {
+		
+		String[] configNames={"applicationContext.xml"};
+		ApplicationContext context= new ClassPathXmlApplicationContext(configNames);
+		MessageBean bean=(MessageBean)context.getBean("messageBean");
 		bean.sayHello();
 	}
+
 }
